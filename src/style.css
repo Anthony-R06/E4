@@ -30,7 +30,7 @@
   --screen-width: 480px;
   --tilt: 24deg;
   --overlap: 18px;
-  --gap: var(--gap);
+  --gap: 14px;
   --corner-radius: 10px;
 }
 
@@ -119,10 +119,15 @@ output {
 
 .pip {
   color: var(--pink);
+  width: 22px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: currentColor;
 }
 
 .cell {
   color: var(--yellow);
+  flex: 1;
+  border-radius: 2px;
 }
 
 .pip.lit,
@@ -184,6 +189,13 @@ output {
   gap: 10px;
   font-size: 12px;
   color: var(--light-blue);
+}
+
+.stop-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
 }
 
 .stop[data-state="cleared"] {
