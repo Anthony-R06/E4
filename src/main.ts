@@ -1,7 +1,10 @@
 import Phaser from "phaser";
 import { HEIGHT, WIDTH } from "./actors.ts";
 import { Hud } from "./hud.ts";
-import { GameScene } from "./game.ts";
+import { BootScene } from "./scenes/boot.ts";
+import { TitleScene } from "./scenes/title.ts";
+import { PlayScene } from "./scenes/play.ts";
+import { CutsceneScene } from "./scenes/cutscene.ts";
 import "./style.css";
 
 /**
@@ -31,6 +34,14 @@ new Phaser.Game({
   width: WIDTH,
   height: HEIGHT,
   backgroundColor: "#04020c",
-  scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
-  scene: [new GameScene(hud, options)],
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
+  scene: [
+    new BootScene(),
+    new TitleScene(hud, options),
+    new PlayScene(hud, options),
+    new CutsceneScene(hud),
+  ],
 });
