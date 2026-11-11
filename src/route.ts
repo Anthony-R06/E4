@@ -1,20 +1,20 @@
 export type EnemyKind = "drone" | "dart" | "turret" | "lancer";
 export type Formation = "line" | "vee" | "column" | "pincer";
 
-export type Wave = {
+export interface Wave {
   time: number;
   kind: EnemyKind;
   count: number;
   position: number;
   formation: Formation;
-};
+}
 
-export type Sector = {
+export interface Sector {
   name: string;
   subtitle: string;
   length: number;
   waves: Wave[];
-};
+}
 
 export const SECTORS: Sector[] = [{
   name: "Outer Drift",
