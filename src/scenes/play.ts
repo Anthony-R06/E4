@@ -6,7 +6,6 @@ import {
   Bullet,
   Enemy,
   EnemyTypes,
-  HEIGHT,
   Player,
   PowerUp,
   WIDTH,
